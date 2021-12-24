@@ -81,7 +81,7 @@ upload (optional gives a download url to meme which stores in a S3 bucket)
       <input class="form-control" name="image" id="image" type="url" placeholder="Image URL"/>
     </div>
   </div>
-  <button onclick="generateAndUpload();" type="button" class="btn btn-primary btn-sm ml-1">Generate and Store</button>
+  <button onclick="generateAndUpload();" type="button" class="btn btn-primary btn-sm ml-1">Generate and Share</button>
   <button type="submit" class="btn btn-sm ml-1">Generate</button>
 </form>
 <h2>
@@ -103,7 +103,17 @@ upload (optional gives a download url to meme which stores in a S3 bucket)
         const url = '/generate?top=' + topText + '&bottom=' + bottomText + '&image=' + image + '&upload';
         const response = await fetch(url);
         const data = await response.json();
-        window.location.href = data.url;
+        if (navigator.share) {
+          navigator.share({
+            title: 'Check out my new meme!',
+            url: data.url
+          })
+        }else if(navigator.clipboard){
+          const cb = navigator.clipboard;
+          cb.writeText(data.url);
+        }else{
+          window.location.href = data.url;
+        }
       }
     </script>
   </body>
