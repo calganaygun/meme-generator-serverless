@@ -53,7 +53,39 @@ bottom=&lt;bottom_text&gt;&amp;
 upload (optional gives a download url to meme which stores in a S3 bucket)
 </code></pre>
 <h2>
-<a id="user-content-test-it" class="anchor" href="#test-it" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Test it</h2>
+<a id="user-content-enduser" class="anchor" href="#enduser" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Use via Form</h2>
+<form action="/generate">
+  <div class="form-group">
+    <div class="form-group-header">
+      <label for="example-text">Top Text</label>
+    </div>
+    <div class="form-group-body">
+      <input class="form-control" name="top" id="top" type="text" placeholder="Top Text"/>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="form-group-header">
+      <label for="example-text">Bottom Text</label>
+    </div>
+    <div class="form-group-body">
+      <input class="form-control" name="bottom" id="bottom" type="text" placeholder="Bottom Text"/>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="form-group-header">
+      <label for="example-text">Background Image URL</label>
+    </div>
+    <div class="form-group-body">
+      <input class="form-control" name="image" id="image" type="url" placeholder="Image URL"/>
+    </div>
+  </div>
+  <button onclick="generateAndUpload();" type="button" class="btn btn-primary btn-sm ml-1">Generate and Store</button>
+  <button type="submit" class="btn btn-sm ml-1">Generate</button>
+</form>
+<h2>
+<a id="user-content-test-it" class="anchor" href="#test-it" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API Examples</h2>
 <p>You can check my examples:</p>
 <p>Generating example <a href="https://serverless-meme-generator.calgan.cloud/generate?top=I%27m%20in%20ur%20cloud&amp;bottom=creating%20ur%20memes&amp;image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Cat_on_laptop_-_Just_Browsing.jpg/800px-Cat_on_laptop_-_Just_Browsing.jpg" rel="nofollow">https://serverless-meme-generator.calgan.cloud/generate?top=I%27m%20in%20ur%20cloud&amp;bottom=creating%20ur%20memes&amp;image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Cat_on_laptop_-<em>Just_Browsing.jpg/800px-Cat_on_laptop</em>-_Just_Browsing.jpg</a></p>
 <p>Generating and storing example <a href="https://serverless-meme-generator.calgan.cloud/generate?top=I%27m%20in%20ur%20cloud&amp;bottom=creating%20ur%20memes&amp;image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Cat_on_laptop_-_Just_Browsing.jpg/800px-Cat_on_laptop_-_Just_Browsing.jpg&amp;upload" rel="nofollow">https://serverless-meme-generator.calgan.cloud/generate?top=I%27m%20in%20ur%20cloud&amp;bottom=creating%20ur%20memes&amp;image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Cat_on_laptop_-<em>Just_Browsing.jpg/800px-Cat_on_laptop</em>-_Just_Browsing.jpg&amp;upload</a></p>
@@ -63,4 +95,15 @@ upload (optional gives a download url to meme which stores in a S3 bucket)
     </div>
     <script src="https://cdn.jsdelivr.net/gh/calganaygun/MDcat@main/theme.js"></script>
     <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+    <script>
+      async function generateAndUpload() {
+        const top = document.getElementById('top').value;
+        const bottom = document.getElementById('bottom').value;
+        const image = document.getElementById('image').value;
+        const url = '/generate?top=' + top + '&bottom=' + bottom + '&image=' + image + '&upload';
+        const response = await fetch(url);
+        const data = await response.json();
+        window.location.href = data.url;
+      }
+    </script>
   </body>
