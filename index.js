@@ -15,7 +15,7 @@ const corsOptions = {
 api.use(cors(corsOptions));
 
 api.get("/generate", async (req, res) => {
-  if (req.query.image === undefined) {
+  if (req.query.image == false) {
     res.send("Please provide an image URL");
     return;
   }

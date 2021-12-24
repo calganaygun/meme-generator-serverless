@@ -1,19 +1,15 @@
 <head>
-    <link
-      href="https://unpkg.com/@primer/css@^16.0.0/dist/primer.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet alternate"
-      href="https://cdn.jsdelivr.net/gh/primer/github-syntax-light@master/lib/github-light.css" id="light-hl">
-    <link rel="stylesheet alternate"
+  <link href="https://unpkg.com/@primer/css@^16.0.0/dist/primer.css" rel="stylesheet" />
+  <link rel="stylesheet alternate"
+    href="https://cdn.jsdelivr.net/gh/primer/github-syntax-light@master/lib/github-light.css" id="light-hl">
+  <link rel="stylesheet alternate"
     href="https://cdn.jsdelivr.net/gh/primer/github-syntax-dark@master/lib/github-dark.css" id="dark-hl">
-      
-    <title>README.md</title>
-  </head>
-  
-  <body id="markdown-body" data-color-mode="light" data-dark-theme="light">
-    <div
-      class="
+
+  <title>README.md</title>
+</head>
+
+<body id="markdown-body" data-color-mode="light" data-dark-theme="light">
+  <div class="
         Box
         md
         js-code-block-container
@@ -21,99 +17,160 @@
         container-xl
         px-3 px-md-4 px-lg-5
         mt-5
-      "
-      id="content"
-    >
-      <div class="Box-body px-5 pb-5">
-        <div class="d-flex flex-column flex-sm-row-reverse">
-          <div>
-            <button id="theme-button" class="btn" type="button">
-              <span
-                id="theme-icon"
-                class="iconify"
-                data-icon="octicon:sun-16"
-              ></span>
-            </button>
-          </div>
+      " id="content">
+    <div class="Box-body px-5 pb-5">
+      <div class="d-flex flex-column flex-sm-row-reverse">
+        <div>
+          <button id="theme-button" class="btn" type="button">
+            <span id="theme-icon" class="iconify" data-icon="octicon:sun-16"></span>
+          </button>
         </div>
-        <article class="markdown-body entry-content container-lg" itemprop="text">
-            <h1>
-<a id="user-content-meme-generator-api-for-serverless-cloud" class="anchor" href="#meme-generator-api-for-serverless-cloud" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Meme Generator API for Serverless Cloud</h1>
-<p>This is an simple and cool app example for <a href="https://www.serverless.com/cloud" rel="nofollow">Serverless Cloud</a>.</p>
-<p>With this API you can generate and store image file of this meme easily.</p>
-<h2>
-<a id="user-content-forking-project" class="anchor" href="#forking-project" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Forking Project</h2>
-<p><a href="https://cloud.serverless.com/calganaygun/meme-generator-serverless" rel="nofollow">Fork this app on Serverless Cloud</a></p>
-<p>If you forked this app in Serverless Cloud, you have to set a parameter named <code>MAX_AGE_IN_DAYS</code>. It is live time for uploaded images.</p>
-<h2>
-<a id="user-content-api-usage" class="anchor" href="#api-usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API Usage</h2>
-<pre><code>/?image&lt;background_image_url&gt;&amp;
+      </div>
+      <article class="markdown-body entry-content container-lg" itemprop="text">
+        <h1>
+          <a id="user-content-meme-generator-api-for-serverless-cloud" class="anchor"
+            href="#meme-generator-api-for-serverless-cloud" aria-hidden="true"><span aria-hidden="true"
+              class="octicon octicon-link"></span></a>Meme Generator API for Serverless Cloud
+        </h1>
+        <p>This is an simple and cool app example for <a href="https://www.serverless.com/cloud"
+            rel="nofollow">Serverless Cloud</a>.</p>
+        <p>With this API you can generate and store image file of this meme easily.</p>
+        <h2>
+          <a id="user-content-forking-project" class="anchor" href="#forking-project" aria-hidden="true"><span
+              aria-hidden="true" class="octicon octicon-link"></span></a>Forking Project
+        </h2>
+        <p><a href="https://cloud.serverless.com/calganaygun/meme-generator-serverless" rel="nofollow">Fork this app on
+            Serverless Cloud</a></p>
+        <p>If you forked this app in Serverless Cloud, you have to set a parameter named <code>MAX_AGE_IN_DAYS</code>.
+          It is live time for uploaded images.</p>
+        <h2>
+          <a id="user-content-api-usage" class="anchor" href="#api-usage" aria-hidden="true"><span aria-hidden="true"
+              class="octicon octicon-link"></span></a>API Usage
+        </h2>
+        <pre><code>/?image&lt;background_image_url&gt;&amp;
 top=&lt;top_text&gt;&amp;
 bottom=&lt;bottom_text&gt;&amp;
 upload (optional gives a download url to meme which stores in a S3 bucket)
 </code></pre>
-<h2>
-<a id="user-content-enduser" class="anchor" href="#enduser" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Use via Form</h2>
-<form action="/generate">
-  <div class="form-group">
-    <div class="form-group-header">
-      <label for="example-text">Top Text</label>
-    </div>
-    <div class="form-group-body">
-      <input class="form-control" name="top" id="top" type="text" placeholder="Top Text"/>
+        <h2>
+          <a id="user-content-enduser" class="anchor" href="#enduser" aria-hidden="true"><span aria-hidden="true"
+              class="octicon octicon-link"></span></a>Use via Form
+        </h2>
+        <form action="/generate">
+          <div class="form-group">
+            <div class="form-group-header">
+              <label for="example-text">Top Text</label>
+            </div>
+            <div class="form-group-body">
+              <input class="form-control" name="top" id="top" type="text" placeholder="Top Text" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-group-header">
+              <label for="example-text">Bottom Text</label>
+            </div>
+            <div class="form-group-body">
+              <input class="form-control" name="bottom" id="bottom" type="text" placeholder="Bottom Text" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-group-header">
+              <label for="example-text">Background Image URL</label>
+            </div>
+            <div class="form-group-body">
+              <input class="form-control" name="image" id="image" type="url" placeholder="Image URL" />
+            </div>
+          </div>
+          <button onclick="generateAndUpload();" type="button" class="btn btn-primary btn-sm ml-1">Generate and
+            Share</button>
+          <button type="submit" class="btn btn-sm ml-1">Generate</button>
+        </form>
+        <h2>
+          <a id="user-content-test-it" class="anchor" href="#test-it" aria-hidden="true"><span aria-hidden="true"
+              class="octicon octicon-link"></span></a>API Examples
+        </h2>
+        <p>You can check my examples:</p>
+        <p>Generating example <a
+            href="https://serverless-meme-generator.calgan.cloud/generate?top=I%27m%20in%20ur%20cloud&amp;bottom=creating%20ur%20memes&amp;image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Cat_on_laptop_-_Just_Browsing.jpg/800px-Cat_on_laptop_-_Just_Browsing.jpg"
+            rel="nofollow">https://serverless-meme-generator.calgan.cloud/generate?top=I%27m%20in%20ur%20cloud&amp;bottom=creating%20ur%20memes&amp;image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Cat_on_laptop_-<em>Just_Browsing.jpg/800px-Cat_on_laptop</em>-_Just_Browsing.jpg</a>
+        </p>
+        <p>Generating and storing example <a
+            href="https://serverless-meme-generator.calgan.cloud/generate?top=I%27m%20in%20ur%20cloud&amp;bottom=creating%20ur%20memes&amp;image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Cat_on_laptop_-_Just_Browsing.jpg/800px-Cat_on_laptop_-_Just_Browsing.jpg&amp;upload"
+            rel="nofollow">https://serverless-meme-generator.calgan.cloud/generate?top=I%27m%20in%20ur%20cloud&amp;bottom=creating%20ur%20memes&amp;image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Cat_on_laptop_-<em>Just_Browsing.jpg/800px-Cat_on_laptop</em>-_Just_Browsing.jpg&amp;upload</a>
+        </p>
+
+      </article>
     </div>
   </div>
-
-  <div class="form-group">
-    <div class="form-group-header">
-      <label for="example-text">Bottom Text</label>
-    </div>
-    <div class="form-group-body">
-      <input class="form-control" name="bottom" id="bottom" type="text" placeholder="Bottom Text"/>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <div class="form-group-header">
-      <label for="example-text">Background Image URL</label>
-    </div>
-    <div class="form-group-body">
-      <input class="form-control" name="image" id="image" type="url" placeholder="Image URL"/>
-    </div>
-  </div>
-  <button onclick="generateAndUpload();" type="button" class="btn btn-primary btn-sm ml-1">Generate and Share</button>
-  <button type="submit" class="btn btn-sm ml-1">Generate</button>
-</form>
-<h2>
-<a id="user-content-test-it" class="anchor" href="#test-it" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API Examples</h2>
-<p>You can check my examples:</p>
-<p>Generating example <a href="https://serverless-meme-generator.calgan.cloud/generate?top=I%27m%20in%20ur%20cloud&amp;bottom=creating%20ur%20memes&amp;image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Cat_on_laptop_-_Just_Browsing.jpg/800px-Cat_on_laptop_-_Just_Browsing.jpg" rel="nofollow">https://serverless-meme-generator.calgan.cloud/generate?top=I%27m%20in%20ur%20cloud&amp;bottom=creating%20ur%20memes&amp;image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Cat_on_laptop_-<em>Just_Browsing.jpg/800px-Cat_on_laptop</em>-_Just_Browsing.jpg</a></p>
-<p>Generating and storing example <a href="https://serverless-meme-generator.calgan.cloud/generate?top=I%27m%20in%20ur%20cloud&amp;bottom=creating%20ur%20memes&amp;image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Cat_on_laptop_-_Just_Browsing.jpg/800px-Cat_on_laptop_-_Just_Browsing.jpg&amp;upload" rel="nofollow">https://serverless-meme-generator.calgan.cloud/generate?top=I%27m%20in%20ur%20cloud&amp;bottom=creating%20ur%20memes&amp;image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Cat_on_laptop_-<em>Just_Browsing.jpg/800px-Cat_on_laptop</em>-_Just_Browsing.jpg&amp;upload</a></p>
-
-        </article>
+  <div id="toast-div" class="anim-fade-in" style="height:150px; display:none;">
+    <div class="position-fixed bottom-0 left-0 mb-3 ml-3">
+      <div class="Toast Toast--error">
+        <span class="Toast-icon">
+          <!-- <%= octicon "stop" %> -->
+          <svg width="14" height="16" viewBox="0 0 14 16" class="octicon octicon-stop" aria-hidden="true">
+            <path fill-rule="evenodd"
+              d="M10 1H4L0 5v6l4 4h6l4-4V5l-4-4zm3 9.5L9.5 14h-5L1 10.5v-5L4.5 2h5L13 5.5v5zM6 4h2v5H6V4zm0 6h2v2H6v-2z" />
+          </svg>
+        </span>
+        <span id="toast-message" class="Toast-content">Something went wrong.</span>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/gh/calganaygun/MDcat@main/theme.js"></script>
-    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
-    <script>
-      async function generateAndUpload() {
-        const topText = encodeURIComponent(document.getElementById('top').value);
-        const bottomText = encodeURIComponent(document.getElementById('bottom').value);
-        const image = encodeURIComponent(document.getElementById('image').value);
-        const url = '/generate?top=' + topText + '&bottom=' + bottomText + '&image=' + image + '&upload';
-        const response = await fetch(url);
-        const data = await response.json();
-        if (navigator.share) {
-          navigator.share({
-            title: 'Check out my new meme!',
-            url: data.url
-          })
-        }else if(navigator.clipboard){
-          const cb = navigator.clipboard;
-          cb.writeText(data.url);
-        }else{
-          window.location.href = data.url;
-        }
+  </div>
+  <script src="https://cdn.jsdelivr.net/gh/calganaygun/MDcat@main/theme.js"></script>
+  <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+  <script>
+    class Toast {
+      constructor(message) {
+        const baseToast = document.getElementById('toast-div');
+        const cloneToast = baseToast.cloneNode(true);
+        const body = document.getElementsByTagName('body')[0];
+        body.appendChild(cloneToast);
+        this.toast = cloneToast;
+        cloneToast.getElementsByTagName("span")[1].innerHTML = message;
+        this.show();
       }
-    </script>
-  </body>
+      show() {
+        this.toast.style.display = 'block';
+        setTimeout(() => {
+          this.toast.style.display = 'none';
+          this.toast.remove();
+        }, 3000);
+      }
+    }
+
+    async function generateAndUpload() {
+      document.getElementById('toast-div').style.display = "none";
+      const topText = encodeURIComponent(document.getElementById('top').value);
+      const bottomText = encodeURIComponent(document.getElementById('bottom').value);
+      const image = encodeURIComponent(document.getElementById('image').value);
+
+      if (!image.startsWith("http") || image === undefined) {
+        new Toast("Please enter an image URL.");
+        return;
+      }
+
+      const url = '/generate?top=' + topText + '&bottom=' + bottomText + '&image=' + image + '&upload';
+      const response = await fetch(url);
+      const data = await response.json();
+
+      if (data.url === undefined) { //Check response URL
+        new Toast("Backend error.");
+        return;
+      }
+
+      if (navigator.share) { // Share image URL
+        navigator.share({
+          title: 'Check out my new meme!',
+          url: data.url
+        })
+      } else if (navigator.clipboard) { // Or copy to clipboard
+        const cb = navigator.clipboard;
+        cb.writeText(data.url);
+      } else { // Or redirect to image
+        window.location.href = data.url;
+      }
+    }
+  </script>
+</body>
