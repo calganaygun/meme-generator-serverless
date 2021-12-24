@@ -1,0 +1,26 @@
+{
+  "name": "meme-generator-serverless",
+  "version": "1.0.0",
+  "description": "Serverless meme generator project",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "cloud",
+    "test": "cloud test"
+  },
+  "devDependencies": {
+    "@serverless/cloud": "^2.0.0"
+  },
+  "serverless": {
+    "app": "meme-generator-serverless",
+    "org": "calganaygun"
+  },
+  "dependencies": {
+    "canvas": "^2.8.0",
+    "cors": "^2.8.5",
+    "dayjs": "^1.10.7",
+    "jimp": "^0.16.1",
+    "node-fetch": "^3.1.0",
+    "uuid": "^8.3.2"
+  }
+}
