@@ -97,10 +97,10 @@ upload (optional gives a download url to meme which stores in a S3 bucket)
     <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
     <script>
       async function generateAndUpload() {
-        const top = document.getElementById('top').value;
-        const bottom = document.getElementById('bottom').value;
-        const image = document.getElementById('image').value;
-        const url = '/generate?top=' + top + '&bottom=' + bottom + '&image=' + image + '&upload';
+        const topText = encodeURIComponent(document.getElementById('top').value);
+        const bottomText = encodeURIComponent(document.getElementById('bottom').value);
+        const image = encodeURIComponent(document.getElementById('image').value);
+        const url = '/generate?top=' + topText + '&bottom=' + bottomText + '&image=' + image + '&upload';
         const response = await fetch(url);
         const data = await response.json();
         window.location.href = data.url;
